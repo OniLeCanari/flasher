@@ -1,8 +1,36 @@
 basic.forever(function () {
     pins.digitalWritePin(DigitalPin.P1, 1)
-    led.plot(0, 4)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . . . .
+        . . . . .
+        # . . . .
+        `)
     basic.pause(100)
-    pins.digitalWritePin(DigitalPin.P1, 1)
-    led.unplot(0, 4)
-    basic.pause(900)
+    pins.digitalWritePin(DigitalPin.P1, 0)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        . . . . .
+        # # . . .
+        . # . . .
+        `)
+    basic.pause(100)
+    basic.showLeds(`
+        . . . . .
+        . . . . .
+        # # . . .
+        . . # . .
+        . . # . .
+        `)
+    basic.pause(100)
+    basic.showLeds(`
+        . . . . .
+        # # # . .
+        . . . # .
+        . . . # .
+        . . . # .
+        `)
+    basic.pause(600)
 })
